@@ -9,6 +9,16 @@ Tradingview有使用亚马逊 (AWS) 的 CloudFront CDN，但对CDN使用并不�
 
 也没有积极适配大陆市场，大部分IP质量差
 
+# 自己生成
+
+## update.sh
+
+脚本使用api 【https://github-hosts.tinsfox.com/】 获取域名IP，不进行大陆有效性测试
+
+## vps.sh
+
+在 香港vps上运行，获取最近的ip地址。不进行大陆有效性测试
+
 # 如何使用
 ### 1. SwitchHosts 工具
 
@@ -16,8 +26,8 @@ Tradingview有使用亚马逊 (AWS) 的 CloudFront CDN，但对CDN使用并不�
 2. 添加规则：
    - 方案名：TV Hosts
    - 类型：远程
-   - URL：`https://github-hosts.tinsfox.com/hosts`
-   - 自动更新：1 小时
+   - URL：`https://cdn.jsdelivr.net/gh/invmy/tradingview-hosts/hosts`
+   - 自动更新：12 小时
 
 ### 2. 手动更新
 
