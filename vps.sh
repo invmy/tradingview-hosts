@@ -1,5 +1,6 @@
 #!/bin/bash
 
+DNS_SERVER="9.9.9.9"
 DOMAIN_FILE="domain.txt"
 OUTPUT_FILE="hosts"
 TCPING="./tcping"
@@ -16,7 +17,7 @@ for domain in "${domains[@]}"; do
 
     # 获取3次 IP，并去重
     ips=($(for i in {1..3}; do
-        dig +short "$domain" | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}' | head -n1
+        dig @$DNS_SERVER +short "$domain" | grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}' | head -n1
     done | sort -u))
 
     [ ${#ips[@]} -eq 0 ] && { echo "No IP found for $domain"; continue; }
