@@ -40,13 +40,6 @@ Tradingview有使用亚马逊 (AWS) 的 CloudFront CDN，但对CDN使用并不�
    - MacOS：`sudo killall -HUP mDNSResponder`
    - Linux：`sudo systemd-resolve --flush-caches`
 
-## API 文档
-
-- `GET /hosts` - 获取 hosts 文件内容
-- `GET /hosts.json` - 获取 JSON 格式的数据
-- `GET /{domain}` - 获取指定域名的实时 DNS 解析结果
-- `POST /reset` - 清空缓存并重新获取所有数据（需要 API 密钥）
-
 # 权限问题
 - Windows：需要以管理员身份运行
 - MacOS/Linux：需要 sudo 权限
